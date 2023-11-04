@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../operations';
 
 const SelectedContact = ({ name, number, id }) => {
-  console.log(id);
   const dispatch = useDispatch();
   const handleRemove = id => dispatch(deleteContact(id));
 
