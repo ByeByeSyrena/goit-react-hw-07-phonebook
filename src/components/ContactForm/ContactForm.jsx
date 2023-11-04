@@ -38,7 +38,6 @@ const ContactForm = () => {
     };
 
     dispatch(addContact(contactData));
-    dispatch(getAllContacts());
 
     event.target.reset();
   };

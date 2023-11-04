@@ -4,7 +4,7 @@ import { deleteContact } from '../../operations';
 
 const SelectedContact = ({ name, number, id }) => {
   const dispatch = useDispatch();
-  const handleRemove = () => dispatch(deleteContact(id));
+  const handleRemove = event => dispatch(deleteContact(id));
 
   return (
     <div className={css.itemWrapper}>

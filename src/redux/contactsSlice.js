@@ -30,7 +30,7 @@ const contactsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(addContact.fulfilled, (state, { payload }) => {
-        state.items.push({ payload });
+        state.items = [...state.items, payload];
         state.error = null;
         state.isLoading = false;
       })
