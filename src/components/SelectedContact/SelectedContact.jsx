@@ -3,15 +3,20 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../operations';
 
 const SelectedContact = ({ name, number, id }) => {
+  console.log(id);
   const dispatch = useDispatch();
-  const handleRemove = event => dispatch(deleteContact(id));
+  const handleRemove = id => dispatch(deleteContact(id));
 
   return (
-    <div className={css.itemWrapper}>
+    <div className={css.itemWrapper} id={id}>
       <span>
         {name}: {number}
       </span>
-      <button type="button" onClick={handleRemove} className={css.buttonDelete}>
+      <button
+        type="button"
+        onClick={() => handleRemove(id)}
+        className={css.buttonDelete}
+      >
         Delete
       </button>
     </div>
